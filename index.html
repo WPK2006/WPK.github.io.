@@ -1,35 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WPK's Projects</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WPK’s Homepage</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #4f46e5, #9333ea);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 3rem 4rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      max-width: 700px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      color: #e5e5e5;
+    }
+
+    .project {
+      margin-bottom: 2rem;
+    }
+
+    .project h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: #ffd166;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .emoji {
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+    }
+  </style>
 </head>
 <body>
-  <header>
+  <div class="container">
     <h1>Welcome to WPK’s Homepage</h1>
-    <p>Explore my latest projects and experiments.</p>
-  </header>
+    <p>Explore my latest projects and experiments 🚀</p>
 
-  <main>
-    <section class="projects">
-      <div class="card">
-        <h2>🚀 Project 1</h2>
-        <p>Short description of what it does.</p>
-        <a href="https://github.com/WPK2006/project1" target="_blank">View on GitHub</a>
-      </div>
+    <div class="project">
+      <h2><span class="emoji">🚀</span>Project 1</h2>
+      <p>Short description of what it does.</p>
+      <a href="#">View on GitHub</a>
+    </div>
 
-      <div class="card">
-        <h2>💡 Project 2</h2>
-        <p>Another cool thing you’re working on.</p>
-        <a href="https://github.com/WPK2006/project2" target="_blank">View on GitHub</a>
-      </div>
-    </section>
-  </main>
+    <div class="project">
+      <h2><span class="emoji">💡</span>Project 2</h2>
+      <p>Another cool thing you’re working on.</p>
+      <a href="#">View on GitHub</a>
+    </div>
 
-  <footer>
-    <p>© 2025 WPK2006 — Hosted on GitHub Pages</p>
-  </footer>
+    <footer>
+      © 2025 WPK2006 — Hosted on GitHub Pages
+    </footer>
+  </div>
 </body>
 </html>
