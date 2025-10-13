@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script> if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/serviceworker.js')
+  .then(() => console.log('Service worker registered'))
+  .catch(err => console.error('Service worker registration failed:', err));
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WPK’s Homepage</title>
@@ -92,4 +97,6 @@
     </footer>
   </div>
 </body>
-</html>
+</html> 
+
+
