@@ -1,0 +1,10 @@
+@import 'variables';
+@import 'mixins';
+@import 'components/header';
+@import 'components/footer';
+
+/* Your styles */
+body {
+  font-family: $main-font;
+  background-color: $bg-color;
+}
