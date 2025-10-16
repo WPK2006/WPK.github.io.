@@ -1,4 +1,2 @@
-theme: jekyll-theme-dinky
-title: WPK's homepage
-description: Bookmark this to keep an eye on my project updates!
-
+baseurl: ""
+url: "https://WPK2006.github.io"
