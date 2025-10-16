@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script> if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/serviceworker.js')
-  .then(() => console.log('Service worker registered'))
-  .catch(err => console.error('Service worker registration failed:', err));
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WPK’s Homepage</title>
+  <link rel="stylesheet" href="assets/css/main.css">
   <style>
     /* Reset */
     * {
@@ -84,21 +80,25 @@
     
     <div class="project">
       <h2><span class="emoji">🚀</span>WPK's Profile</h2>
-     <a href="https://github.com/WPK2006" target="_blank" rel="noopener noreferrer">My Profile</a>
+      <a href="https://github.com/WPK2006" target="_blank" rel="noopener noreferrer">My Profile</a>
     </div>
 
     <div class="project">
-      <h2><span class="emoji">💡</span>schedule</h2>
-      <a href="https://tcstenungsund.github.io/schedule/schedule.html?course=frot100tx-25te4i#week-41"target="_blank" rel="noopener noreferrer">My schedule for school</a>
+      <h2><span class="emoji">💡</span>Schedule</h2>
+      <a href="https://tcstenungsund.github.io/schedule/schedule.html?course=frot100tx-25te4i#week-41" target="_blank" rel="noopener noreferrer">My schedule for school</a>
     </div>
 
     <footer>
       © 2025 WPK2006 — Hosted on GitHub Pages
     </footer>
   </div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(() => console.log('Service worker registered'))
+        .catch(err => console.error('Service worker registration failed:', err));
+    }
+  </script>
 </body>
-  <link rel="stylesheet" href="assets/css/main.css">
-</html> 
-
-
-
+</html>
