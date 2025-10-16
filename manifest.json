@@ -1,19 +1,19 @@
 {
   "name": "WPK Homepage",
   "short_name": "WPK",
-  "start_url": "/index.html",
+  "start_url": "/WPK.github.io/index.html",
   "display": "standalone",
   "background_color": "#4f46e5",
   "theme_color": "#9333ea",
-  "description": "Welcome to WPK’s Homepage — projects and schedule.",
+  "description": "Welcome to WPK's Homepage — projects and schedule.",
   "icons": [
     {
-      "src": "icons/icon-192.png",
+      "src": "https://via.placeholder.com/192",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "https://via.placeholder.com/512",
       "sizes": "512x512",
       "type": "image/png"
     }
