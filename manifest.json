@@ -1,4 +1,21 @@
-
-"scripts": {
-  "build:css": "sass assets/scss/main.scss assets/css/main.css --no-source-map --style=compressed"
+{
+  "name": "WPK Homepage",
+  "short_name": "WPK",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#4f46e5",
+  "theme_color": "#9333ea",
+  "description": "Welcome to WPK’s Homepage — projects and schedule.",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
