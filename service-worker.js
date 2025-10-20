@@ -1,21 +1,21 @@
 // service-worker.js
 
-const CACHE_NAME = "my-pwa-cache-v1";
-const ASSETS = [
-  "./",                // Root
-  "./index.html",
-  "./styles.css",
-  "./app.js",
-  "./favicon.ico",
-  "./manifest.json",
-];
 
-// Install event — cache core assets
+const BASE_PATH = "/WPK.github.io./";
+const CACHE_NAME = "wpk-cache-v1";
+
+
+const ASSETS = [
+  `${BASE_PATH}`,
+  `${BASE_PATH}index.html`,
+  `${BASE_PATH}manifest.json`,
+  `${BASE_PATH}favicon.ico`,
+
 self.addEventListener("install", (event) => {
   console.log("[ServiceWorker] Installing...");
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log("[ServiceWorker] Caching app shell");
+      console.log("[ServiceWorker] Caching core assets");
       return cache.addAll(ASSETS);
     })
   );
@@ -26,9 +26,9 @@ self.addEventListener("install", (event) => {
 self.addEventListener("activate", (event) => {
   console.log("[ServiceWorker] Activating...");
   event.waitUntil(
-    caches.keys().then((keyList) =>
+    caches.keys().then((keys) =>
       Promise.all(
-        keyList.map((key) => {
+        keys.map((key) => {
           if (key !== CACHE_NAME) {
             console.log("[ServiceWorker] Removing old cache:", key);
             return caches.delete(key);
@@ -40,12 +40,14 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
-// Fetch event — network-first strategy with cache fallback
+// Fetch event — network-first with cache fallback
 self.addEventListener("fetch", (event) => {
+  // Ignore requests outside your domain (like GitHub APIs)
+  if (!event.request.url.startsWith(self.location.origin)) return;
+
   event.respondWith(
     fetch(event.request)
       .then((response) => {
-        // Cache the fetched response
         const clone = response.clone();
         caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
         return response;
@@ -69,7 +71,5 @@ self.addEventListener("push", (event) => {
 // Optional: Handle notification click
 self.addEventListener("notificationclick", (event) => {
   event.notification.close();
-  event.waitUntil(
-    clients.openWindow("./")
-  );
+  event.waitUntil(clients.openWindow(BASE_PATH));
 });
