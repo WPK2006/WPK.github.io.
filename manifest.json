@@ -2,7 +2,7 @@
   "name": "WPK Homepage",
   "short_name": "WPK",
   "start_url": "./",
-  "scope": "."
+  "scope": ".",
   "display": "standalone",
   "background_color": "#4f46e5",
   "theme_color": "#9333ea",
