@@ -19,9 +19,4 @@
       "type": "image/png"
     }
   ]
-}
-
-"scripts": {
-  "test": "cypress run",
-  "test:open": "cypress open"
-}
+ }
