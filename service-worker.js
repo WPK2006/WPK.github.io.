@@ -60,8 +60,8 @@ self.addEventListener("push", (event) => {
   const title = data.title || "New Notification";
   const options = {
     body: data.body || "You have a new message!",
-    icon: "/icons/icon-192x192.png",
-    badge: "/icons/icon-96x96.png",
+    icon: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/699824cc-3806-47bf-8487-666796a0c2f7.png",
+    badge: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/699824cc-3806-47bf-8487-666796a0c2f7.png",
   };
   event.waitUntil(self.registration.showNotification(title, options));
 });
