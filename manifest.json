@@ -1,7 +1,8 @@
 {
   "name": "WPK Homepage",
   "short_name": "WPK",
-  "start_url": "/WPK.github.io/index.html",
+  "start_url": "./",
+  "scope": "."
   "display": "standalone",
   "background_color": "#4f46e5",
   "theme_color": "#9333ea",
