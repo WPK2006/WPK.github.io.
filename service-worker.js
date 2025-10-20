@@ -2,12 +2,12 @@
 
 const CACHE_NAME = "my-pwa-cache-v1";
 const ASSETS = [
-  "/",                // Root
-  "/index.html",
-  "/styles.css",
-  "/app.js",
-  "/favicon.ico",
-  "/manifest.json",
+  "./",                // Root
+  "./index.html",
+  "./styles.css",
+  "./app.js",
+  "./favicon.ico",
+  "./manifest.json",
 ];
 
 // Install event — cache core assets
