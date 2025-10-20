@@ -1,25 +1,28 @@
-sidebar_open = false
+// Basic Service Worker (cache-first)
+const CACHE_NAME = 'rizzcode-cache-v1';
+const OFFLINE_URLS = [
+    '/',
+    '/index.html',
+    '/style.css',
+    '/sidebar.js',
+    '/logo.svg',
+    // add other resources as needed
+];
 
-function toggle_sidebar() {
-    if (sidebar_open) {
-        sidebar.style.width = "4em";
-        // sidebar_btn.style.transform = "rotate(90deg)";
-        sidebar_btn.style.transform = "rotate(0deg)";
-        sidebar_sep.classList.toggle("sepparator-active")
-        sidebar_open = false;
-    }
-    else {
-        sidebar.style.width = "18em";
-        // sidebar_btn.style.transform = "rotate(0deg)";
-        sidebar_btn.style.transform = "rotate(90deg)";
-        sidebar_sep.classList.toggle("sepparator-active")
-        sidebar_open = true;
-    }
-};
+self.addEventListener('install', function(event) {
+    event.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(function(cache) {
+                return cache.addAll(OFFLINE_URLS);
+            })
+    );
+});
 
-window.onload = function() {
-    sidebar = document.getElementById("sidebar")
-    sidebar_btn = document.getElementById("sidebar-btn")
-    sidebar_sep = document.getElementById("sepparator")
-    sidebar_btn.addEventListener("click", toggle_sidebar); 
-};
+self.addEventListener('fetch', function(event) {
+    event.respondWith(
+        caches.match(event.request)
+            .then(function(response) {
+                return response || fetch(event.request);
+            })
+    );
+});
