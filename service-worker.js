@@ -1,28 +1,75 @@
-// Basic Service Worker (cache-first)
-const CACHE_NAME = 'rizzcode-cache-v1';
-const OFFLINE_URLS = [
-    '/',
-    '/index.html',
-    '/style.css',
-    '/sidebar.js',
-    '/logo.svg',
-    // add other resources as needed
+// service-worker.js
+
+const CACHE_NAME = "my-pwa-cache-v1";
+const ASSETS = [
+  "/",                // Root
+  "/index.html",
+  "/styles.css",
+  "/app.js",
+  "/favicon.ico",
+  "/manifest.json",
 ];
 
-self.addEventListener('install', function(event) {
-    event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(function(cache) {
-                return cache.addAll(OFFLINE_URLS);
-            })
-    );
+// Install event — cache core assets
+self.addEventListener("install", (event) => {
+  console.log("[ServiceWorker] Installing...");
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      console.log("[ServiceWorker] Caching app shell");
+      return cache.addAll(ASSETS);
+    })
+  );
+  self.skipWaiting();
 });
 
-self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        caches.match(event.request)
-            .then(function(response) {
-                return response || fetch(event.request);
-            })
-    );
+// Activate event — clean up old caches
+self.addEventListener("activate", (event) => {
+  console.log("[ServiceWorker] Activating...");
+  event.waitUntil(
+    caches.keys().then((keyList) =>
+      Promise.all(
+        keyList.map((key) => {
+          if (key !== CACHE_NAME) {
+            console.log("[ServiceWorker] Removing old cache:", key);
+            return caches.delete(key);
+          }
+        })
+      )
+    )
+  );
+  self.clients.claim();
+});
+
+// Fetch event — network-first strategy with cache fallback
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    fetch(event.request)
+      .then((response) => {
+        // Cache the fetched response
+        const clone = response.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+        return response;
+      })
+      .catch(() => caches.match(event.request))
+  );
+});
+
+// Optional: Push notifications
+self.addEventListener("push", (event) => {
+  const data = event.data ? event.data.json() : {};
+  const title = data.title || "New Notification";
+  const options = {
+    body: data.body || "You have a new message!",
+    icon: "/icons/icon-192x192.png",
+    badge: "/icons/icon-96x96.png",
+  };
+  event.waitUntil(self.registration.showNotification(title, options));
+});
+
+// Optional: Handle notification click
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  event.waitUntil(
+    clients.openWindow("/")
+  );
 });
