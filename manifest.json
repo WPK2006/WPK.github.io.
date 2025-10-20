@@ -9,12 +9,12 @@
   "description": "Welcome to WPK's Homepage — projects and schedule.",
   "icons": [
     {
-      "src": "https://via.placeholder.com/192",
+      "src": "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/699824cc-3806-47bf-8487-666796a0c2f7.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://via.placeholder.com/512",
+      "src": "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/699824cc-3806-47bf-8487-666796a0c2f7.png",
       "sizes": "512x512",
       "type": "image/png"
     }
