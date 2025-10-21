@@ -1,5 +1,4 @@
-// _variables.scss
-// Colors
+
 $primary-color: #4f46e5;
 $secondary-color: #9333ea;
 $accent-color: #ffd166;
@@ -8,18 +7,18 @@ $text-secondary: #e5e5e5;
 $text-footer: #ccc;
 $bg-overlay: rgba(255, 255, 255, 0.1);
 
-// Fonts
+
 $main-font: 'Segoe UI', Roboto, sans-serif;
 
-// Spacing
+
 $spacing-sm: 0.5rem;
 $spacing-md: 1rem;
 $spacing-lg: 2rem;
 $spacing-xl: 3rem;
 $spacing-xxl: 4rem;
 
-// Border radius
+
 $border-radius: 20px;
 
-// Shadows
+
 $box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
