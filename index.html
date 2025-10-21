@@ -6,29 +6,37 @@
   <meta name="theme-color" content="#4f46e5">
   <meta name="description" content="WPK's Homepage - Projects and Schedule">
   <title>WPK's Homepage</title>
-  <link rel="manifest" href="/WPK.github.io./manifest.json">
+
+
+  <link rel="manifest" href="manifest.json">
+
   <link rel="apple-touch-icon" href="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/699824cc-3806-47bf-8487-666796a0c2f7.png">
-  <!-- Link to compiled CSS instead of inline styles -->
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
     <h1>Welcome to WPK's Homepage</h1>
+
     <div class="project">
       <h2>WPK's Profile</h2>
-      <a href="https://github.com./WPK2006" target="_blank" rel="noopener noreferrer">My Profile</a>
+      <a href="https://github.com/WPK2006" target="_blank" rel="noopener noreferrer">My Profile</a>
     </div>
+
     <div class="project">
       <h2>Schedule</h2>
       <a href="https://tcstenungsund.github.io/schedule/schedule.html?course=frot100tx-25te4i#week-41" target="_blank" rel="noopener noreferrer">My schedule for school</a>
     </div>
+
     <footer>
       © 2025 WPK2006 — Hosted on GitHub Pages
     </footer>
   </div>
+
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/WPK.github.io./service-worker.js')
+      
+      navigator.serviceWorker.register('service-worker.js')
         .then(reg => console.log('✅ Service worker registered:', reg.scope))
         .catch(err => console.error('❌ Service worker registration failed:', err));
     }
