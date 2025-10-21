@@ -1,16 +1,13 @@
 // service-worker.js
-
-
 const BASE_PATH = "/WPK.github.io./";
 const CACHE_NAME = "wpk-cache-v1";
-
-
 const ASSETS = [
   `${BASE_PATH}`,
   `${BASE_PATH}index.html`,
   `${BASE_PATH}manifest.json`,
-  `${BASE_PATH}favicon.ico`,
- ];
+  `${BASE_PATH}styles.css`,
+]; // FIXED: Added closing bracket
+
 self.addEventListener("install", (event) => {
   console.log("[ServiceWorker] Installing...");
   event.waitUntil(
@@ -44,7 +41,7 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   // Ignore requests outside your domain (like GitHub APIs)
   if (!event.request.url.startsWith(self.location.origin)) return;
-
+  
   event.respondWith(
     fetch(event.request)
       .then((response) => {
