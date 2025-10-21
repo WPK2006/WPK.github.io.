@@ -2,12 +2,12 @@
   index.html
   assets/
     scss/
-      main.scss
-      _variables.scss
-      _mixins.scss
+      main.css
+      _variables.css
+      _mixins.css
       components/
-        _header.scss
-        _footer.scss
+        _header.css
+        _footer.css
     css/
       main.css  ← (output)
   js/
