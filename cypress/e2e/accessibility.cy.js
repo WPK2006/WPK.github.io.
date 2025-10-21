@@ -1,6 +1,6 @@
 describe('Accessibility tests', () => {
   beforeEach(() => {
-    cy.visit('https://wpk2006.github.io/WPK.github.io/')
+    cy.visit('https://wpk2006.github.io./WPK.github.io/')
     cy.injectAxe()
   })
 
@@ -16,7 +16,7 @@ describe('WPK Homepage - PWA Tests', () => {
   
   beforeEach(() => {
     // Besök din sida före varje test
-    cy.visit('https://wpk2006.github.io/WPK.github.io/')
+    cy.visit('https://wpk2006.github.io./WPK.github.io/')
   })
 
   // ===== E2E TESTER =====
@@ -28,7 +28,7 @@ describe('WPK Homepage - PWA Tests', () => {
   it('Should have working links', () => {
     // Testa GitHub profil-länken
     cy.contains('My Profile')
-      .should('have.attr', 'href', 'https://github.com/WPK2006')
+      .should('have.attr', 'href', 'https://github.com./WPK2006')
       .should('have.attr', 'target', '_blank')
     
     // Testa schema-länken
@@ -87,7 +87,7 @@ describe('WPK Homepage - PWA Tests', () => {
 describe('Accessibility Tests', () => {
   
   beforeEach(() => {
-    cy.visit('https://wpk2006.github.io/WPK.github.io/')
+    cy.visit('https://wpk2006.github.io./WPK.github.io/')
     cy.injectAxe()
   })
 
