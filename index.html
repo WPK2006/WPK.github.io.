@@ -8,94 +8,29 @@
   <title>WPK's Homepage</title>
   <link rel="manifest" href="/WPK.github.io./manifest.json">
   <link rel="apple-touch-icon" href="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/699824cc-3806-47bf-8487-666796a0c2f7.png">
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Roboto, sans-serif;
-      background: linear-gradient(135deg, #4f46e5, #9333ea);
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .container {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 3rem 4rem;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-      text-align: center;
-      max-width: 700px;
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
-      color: #e5e5e5;
-    }
-
-    .project {
-      margin-bottom: 2rem;
-    }
-
-    .project h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    a {
-      color: #ffd166;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-  </style>
+  <!-- Link to compiled CSS instead of inline styles -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
     <h1>Welcome to WPK's Homepage</h1>
-
     <div class="project">
       <h2>WPK's Profile</h2>
       <a href="https://github.com/WPK2006" target="_blank" rel="noopener noreferrer">My Profile</a>
     </div>
-
     <div class="project">
       <h2>Schedule</h2>
       <a href="https://tcstenungsund.github.io/schedule/schedule.html?course=frot100tx-25te4i#week-41" target="_blank" rel="noopener noreferrer">My schedule for school</a>
     </div>
-
     <footer>
       © 2025 WPK2006 — Hosted on GitHub Pages
     </footer>
   </div>
-
   <script>
     if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/WPK.github.io./service-worker.js')
-    .then(reg => console.log('✅ Service worker registered:', reg.scope))
-    .catch(err => console.error('❌ Service worker registration failed:', err));
+      navigator.serviceWorker.register('/WPK.github.io./service-worker.js')
+        .then(reg => console.log('✅ Service worker registered:', reg.scope))
+        .catch(err => console.error('❌ Service worker registration failed:', err));
     }
   </script>
 </body>
