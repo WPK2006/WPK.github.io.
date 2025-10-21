@@ -6,8 +6,8 @@
   "main": "index.html",
   "scripts": {
     "sass": "sass styles.scss styles.css",
-    "sass:watch": "sass --watch styles.scss:styles.css",
-    "lint:css": "stylelint '**/*.scss'",
+    "sass:watch": "sass --watch styles.css:styles.css",
+    "lint:css": "stylelint '**/*.css'",
     "test": "cypress run",
     "test:open": "cypress open",
     "build": "npm run sass && npm run lint:css",
