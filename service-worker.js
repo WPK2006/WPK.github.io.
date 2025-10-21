@@ -10,7 +10,7 @@ const ASSETS = [
   `${BASE_PATH}index.html`,
   `${BASE_PATH}manifest.json`,
   `${BASE_PATH}favicon.ico`,
-
+ ];
 self.addEventListener("install", (event) => {
   console.log("[ServiceWorker] Installing...");
   event.waitUntil(
