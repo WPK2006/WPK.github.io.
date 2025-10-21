@@ -20,3 +20,33 @@
     }
   ]
  }
+{
+  "name": "WPK-homepage",
+  "version": "1.0.0",
+  "description": "WPK's PWA Homepage with projects and schedule",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass styles.scss styles.css",
+    "sass:watch": "sass --watch styles.scss:styles.css",
+    "lint:css": "stylelint '**/*.scss'",
+    "test": "cypress run",
+    "test:open": "cypress open",
+    "build": "npm run sass && npm run lint:css",
+    "dev": "npm run sass:watch"
+  },
+  "keywords": [
+    "pwa",
+    "homepage",
+    "service-worker"
+  ],
+  "author": "WPK2006",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard-scss": "^11.1.0",
+    "cypress": "^13.6.0",
+    "axe-core": "^4.8.2",
+    "cypress-axe": "^1.5.0"
+  }
+}
